@@ -57,6 +57,7 @@ Route::get('/', function () {
         }); 
 
         Route::get('/user/profile', function() { 
+            //
             })->name('profile'); 
 
         Route::get('/hello', [WelcomeController::class,'hello']); 
@@ -70,3 +71,10 @@ Route::get('/', function () {
         Route::get('/articles/{id}', [ArticleController::class,'articles']);
 
         Route::resource('photos', PhotoController::class); 
+
+        Route::get('/greeting', function () { 
+            return view('hello', ['name' => 'febriansyah']); 
+            }); 
+
+            Route::get('/greeting', [WelcomeController::class, 
+            'greeting']); 
